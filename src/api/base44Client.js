@@ -249,6 +249,8 @@ const notificationsStore = createStore([
     message: 'Catch Neon Afterglow streaming this weekend.',
     segment: 'cinephiles',
     status: 'scheduled',
+    severity: 'info',
+    type: 'general',
     created_date: '2024-11-18',
   },
 ]);
@@ -298,6 +300,14 @@ const metricsStore = createStore([
 export const base44 = {
   auth: {
     isAuthenticated: async () => true,
+    me: async () =>
+      delay({
+        id: 'u-demo',
+        full_name: 'Demo Admin',
+        email: 'demo@cineverse.app',
+        role: 'admin',
+      }),
+    logout: async () => delay(true),
   },
   entities: {
     Movie: {

@@ -183,7 +183,8 @@ export default function NotificationManagement() {
           ) : (
             <div className="space-y-4">
               {filteredNotifications.map(notification => {
-                const SeverityIcon = severityIcons[notification.severity];
+                const severityKey = notification.severity || 'info';
+                const SeverityIcon = severityIcons[severityKey] || Info;
                 return (
                   <div
                     key={notification.id}
@@ -195,7 +196,7 @@ export default function NotificationManagement() {
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex gap-4 flex-1">
-                        <div className={`p-3 rounded-lg ${severityColors[notification.severity]}`}>
+                        <div className={`p-3 rounded-lg ${severityColors[severityKey]}`}>
                           <SeverityIcon className="w-6 h-6" />
                         </div>
                         <div className="flex-1">
@@ -203,8 +204,8 @@ export default function NotificationManagement() {
                             <h3 className="font-semibold text-[#E8E8E8]">
                               {notification.title}
                             </h3>
-                            <Badge className={severityColors[notification.severity]}>
-                              {notification.severity}
+                            <Badge className={severityColors[severityKey]}>
+                              {severityKey}
                             </Badge>
                             <Badge variant="outline" className="border-[#2A3144] text-[#8B92A8]">
                               {notification.type}
