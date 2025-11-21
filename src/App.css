@@ -1,0 +1,44 @@
+#root {
+  background: transparent;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(145deg, rgba(21, 26, 40, 0.75), rgba(10, 14, 23, 0.95));
+}
+
+.app-sidebar {
+  width: 220px;
+  background: rgba(13, 17, 26, 0.9);
+  border-right: 1px solid #2A3144;
+  backdrop-filter: blur(6px);
+}
+
+.app-main {
+  flex: 1;
+  padding: 24px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #E8E8E8;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  background: #1A1F2E;
+  transform: translateX(3px);
+  color: #F5C518;
+}
+
+.nav-link.active {
+  background: linear-gradient(90deg, rgba(245, 197, 24, 0.12), rgba(245, 197, 24, 0.06));
+  color: #F5C518;
+  border: 1px solid rgba(245, 197, 24, 0.35);
+}
